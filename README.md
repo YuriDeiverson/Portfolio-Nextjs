@@ -58,7 +58,7 @@ src/
 
 ## 📬 Contato
 
-Você pode adaptar o formulário para outro serviço de envio de mensagens se preferir, mas o Web3Forms é prático e gratuito para projetos simples.
+Caso queira entrar em contato yuriideiverson@gmail.com
 
 ---
 
