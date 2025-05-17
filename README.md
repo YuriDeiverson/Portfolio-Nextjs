@@ -62,4 +62,4 @@ Você pode adaptar o formulário para outro serviço de envio de mensagens se pr
 
 ---
 
-Feito com 💙 por [Seu Nome]
+Feito com 💙
