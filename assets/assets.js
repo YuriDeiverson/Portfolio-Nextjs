@@ -81,25 +81,25 @@ export const workData = [
         title: 'App Açaí',
         description: 'E-commerce',
         bgImage: '/work-1.png',
-        link: 'https://yurideiverson.github.io/acai-loja/',
+        link: 'https://vercel.com/yuri-deiversons-projects/acai-loja',
     },
     {
         title: 'App Meteorológico',	
         description: 'Mobile App',
         bgImage: '/work-2.png',
-        link: 'https://yurideiverson.github.io/app-meteorologico/',
+        link: 'https://app-meteorology.vercel.app/',
     },
     {
-        title: 'Instagram Copy', 
-        description: 'Web Design',
+        title: 'Calculadora', 
+        description: 'Mobile App',
         bgImage: '/work-3.png',
-        link: 'https://yurideiverson.github.io/InstagramCopy/',
+        link: 'https://calculator-beryl-tau-83.vercel.app/',
     },
     {
         title: 'Web Blog',
         description: 'Web Design',
         bgImage: '/work-4.png',
-        link: 'https://yurideiverson.github.io/viagens-blog/',
+        link: 'https://travel-blog-ecru.vercel.app/',
     },
 ]
 
