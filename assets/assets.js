@@ -78,10 +78,10 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'App Criativo',
-        description: 'Mobile App',
+        title: 'App Açaí',
+        description: 'E-commerce',
         bgImage: '/work-1.png',
-        link: 'https://yurideiverson.github.io/Desenhar/',
+        link: 'https://yurideiverson.github.io/acai-loja/',
     },
     {
         title: 'App Meteorológico',	
@@ -90,10 +90,10 @@ export const workData = [
         link: 'https://yurideiverson.github.io/app-meteorologico/',
     },
     {
-        title: 'Advocacia Form', 
+        title: 'Instagram Copy', 
         description: 'Web Design',
         bgImage: '/work-3.png',
-        link: 'https://yurideiverson.github.io/Advocacia-form/',
+        link: 'https://yurideiverson.github.io/InstagramCopy/',
     },
     {
         title: 'Web Blog',
@@ -111,9 +111,9 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Linguagens', description: 'HTML, CSS, JavaScript React Js, Next Js' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Linguagens', description: 'HTML, CSS, JavaScript React, Next Js, Node.js, PHP, Typescript...' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Formação', description: 'ADS - Estacio' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: '5+ projetos concluidos' }
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projetos', description: '5+ projetos concluidos' }
 ];
 
 export const toolsData = [

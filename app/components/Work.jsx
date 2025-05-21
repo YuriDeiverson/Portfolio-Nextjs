@@ -89,10 +89,10 @@ const Work = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
-        href="#work"
+        href="https://github.com/YuriDeiverson"
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-gray-400 transition-colors duration-500"
       >
-        Mostrar mais{" "}
+        Mostrar mais{""}
         <Image
           src={assets.right_arrow_bold}
           alt="Right arrow"

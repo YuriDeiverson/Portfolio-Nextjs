@@ -54,7 +54,7 @@ const About = () => {
         >
           <p className="mb-10 font-Ovo text-base md:text-lg leading-relaxed max-w-3xl">
             {" "}
-            Eu sou um desenvolvedor fullstack com ênfase em front-end. Trabalho
+            Desenvolvedor fullstack com ênfase em front-end. Trabalho
             com React, TypeScript, Next.js e Tailwind CSS para criar interfaces
             modernas, responsivas e focadas na experiência do usuário. Tenho
             facilidade para entender problemas, transformar ideias em soluções
