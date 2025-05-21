@@ -81,7 +81,7 @@ export const workData = [
         title: 'App Açaí',
         description: 'E-commerce',
         bgImage: '/work-1.png',
-        link: 'https://vercel.com/yuri-deiversons-projects/acai-loja',
+        link: 'https://acai-loja.vercel.app/',
     },
     {
         title: 'App Meteorológico',	
