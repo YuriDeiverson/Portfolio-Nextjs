@@ -90,10 +90,10 @@ export const workData = [
         link: 'https://app-meteorology.vercel.app/',
     },
     {
-        title: 'Calculadora', 
-        description: 'Mobile App',
+        title: 'Imobiliaria', 
+        description: 'Web Design',
         bgImage: '/work-3.png',
-        link: 'https://calculator-beryl-tau-83.vercel.app/',
+        link: 'https://imobiliaria-gilt.vercel.app/',
     },
     {
         title: 'Web Blog',
