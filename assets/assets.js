@@ -78,10 +78,10 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'App Açaí',
-        description: 'E-commerce',
+        title: 'App Financeiro',
+        description: 'Mobile APP',
         bgImage: '/work-1.png',
-        link: 'https://acai-loja.vercel.app/',
+        link: 'https://github.com/YuriDeiverson/Carteira-Mobile',
     },
     {
         title: 'App Meteorológico',	
@@ -104,10 +104,10 @@ export const workData = [
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Desenvolvimento web é o processo de construção, programação...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'O desenvolvimento de aplicativos móveis envolve a criação de software...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'O design de UI/UX se concentra na criação de uma experiência de usuário perfeita...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Soluções criativas de design para melhorar a comunicação visual...', link: '' },
+    { icon: assets.web_icon, title: 'Web design', description: 'Construo sites modernos e responsivos com React, Next.js e Tailwind CSS, sempre focando na usabilidade e desempenho para usuários finais.', link: 'https://github.com/YuriDeiverson' },
+    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Desenvolvo aplicativos móveis usando React Native, criando interfaces intuitivas e funcionais que garantem uma experiência fluida em diferentes dispositivos.', link: 'https://github.com/YuriDeiverson' },
+    { icon: assets.ui_icon, title: 'UI/UX design', description: 'Crio designs centrados no usuário, combinando estética e funcionalidade para oferecer navegação simples e agradável em todas as plataformas.', link: 'https://github.com/YuriDeiverson' },
+    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Produzo soluções visuais criativas que fortalecem a identidade da marca e facilitam a comunicação clara e impactante com o público.', link: 'https://github.com/YuriDeiverson' },
 ]
 
 export const infoList = [

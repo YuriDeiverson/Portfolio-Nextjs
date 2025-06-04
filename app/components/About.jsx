@@ -54,15 +54,19 @@ const About = () => {
         >
           <p className="mb-10 font-Ovo text-base md:text-lg leading-relaxed max-w-3xl">
             {" "}
-            Desenvolvedor fullstack com ênfase em front-end. Trabalho
-            com React, TypeScript, Next.js e Tailwind CSS para criar interfaces
-            modernas, responsivas e focadas na experiência do usuário. Tenho
-            facilidade para entender problemas, transformar ideias em soluções
-            funcionais e manter um bom padrão de código. Valorizo organização,
-            clareza e colaboração — e estou sempre atento a boas práticas que
-            tornam o desenvolvimento mais eficiente e sustentável. Também estou
-            ampliando minha base no back-end com Node.js, voltado à criação de
-            APIs e integração com sistemas. — vamos conversar!
+            Sou desenvolvedor fullstack com ênfase em front-end, especializado
+            em React, React Native, TypeScript, Django, Next.js, SQL e Tailwind
+            CSS para criar interfaces modernas, responsivas e centradas na
+            melhor experiência do usuário. No backend, trabalho com Python,
+            JavaScript e PHP, desenvolvendo soluções robustas e escaláveis.
+            Tenho facilidade para compreender problemas complexos, transformar
+            ideias em soluções funcionais e manter um padrão de código limpo e
+            organizado. Valorizo a clareza na comunicação, a colaboração em
+            equipe e a adoção de boas práticas que tornam o desenvolvimento mais
+            eficiente e sustentável. Atualmente, estou expandindo meus
+            conhecimentos em Node.js, focando na criação de APIs e integração de
+            sistemas. Se você busca um profissional comprometido, proativo e com
+            vontade de crescer, vamos conversar!
           </p>
 
           <motion.ul
