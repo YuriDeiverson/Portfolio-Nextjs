@@ -29,7 +29,7 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo"
       >
-        Desenvolvedor Front-end
+        Desenvolvedor Fullstack & UX
       </motion.h1>
 
       <motion.p
@@ -38,8 +38,8 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-Ovo"
       >
-        Sou um desenvolvedor frontend de Alagoas, Brasil com experiência em
-        React, Next.js, Tailwind CSS e Typescript.
+        Sou um desenvolvedor fullstack e desginer ux de Alagoas, Brasil com experiência em
+        React, Next.js, Node.js, Tailwind CSS, Javascript e Typescript.
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.a
