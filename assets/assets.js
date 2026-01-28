@@ -84,22 +84,22 @@ export const workData = [
         link: 'https://github.com/YuriDeiverson/Carteira-Mobile',
     },
     {
-        title: 'App Meteorológico',	
-        description: 'Mobile App',
+        title: 'Dashboard Empresarial',	
+        description: 'Web App',
         bgImage: '/work-2.png',
-        link: 'https://app-meteorology.vercel.app/',
+        link: 'https://dashboard-financeiro-rho.vercel.app/',
     },
     {
-        title: 'Imobiliaria', 
+        title: 'Gestão de Produtos', 
         description: 'Web Design',
         bgImage: '/work-3.png',
-        link: 'https://imobiliaria-gilt.vercel.app/',
+        link: 'https://crud-gestao.vercel.app/',
     },
     {
-        title: 'Web Blog',
+        title: 'Controle Financeiro',
         description: 'Web Design',
         bgImage: '/work-4.png',
-        link: 'https://travel-blog-ecru.vercel.app/',
+        link: 'https://financeiroplus.vercel.app/',
     },
 ]
 
