@@ -32,7 +32,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${
           isScroll
-            ? "bg-[rgba(255,255,255,0.5)] backdrop-blur-lg shadow-sm"
+            ? "bg-white/70 dark:bg-gray-950/80 backdrop-blur-lg shadow-sm dark:shadow-gray-900/40"
             : ""
         }`}
       >
@@ -42,7 +42,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
+            isScroll
+              ? ""
+              : "bg-white/80 dark:bg-gray-900/60 shadow-sm backdrop-blur-sm"
           } `}
         >
           <li>
@@ -83,9 +85,12 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
           <a
             href="https://www.linkedin.com/in/yuri-deiverson/"
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 dark:border-gray-500 rounded-full ml-4 font-Ovo hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
-            Contato <Image src={assets.arrow_icon} alt="" className="w-3" />
+            LinkedIn{" "}
+            <Image src={assets.arrow_icon} alt="" className="w-3 dark:invert" aria-hidden />
           </a>
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
@@ -100,7 +105,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         {/* Mobile menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration500"
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 dark:bg-gray-900 transition duration-500"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image

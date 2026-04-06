@@ -18,7 +18,7 @@ const Work = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo"
       >
-        Em construção
+        Fullstack & web
       </motion.h4>
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
@@ -33,56 +33,97 @@ const Work = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.5 }}
-        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300"
       >
-        Explore minha coleção de projetos, onde cada um reflete minha paixão por
-        criar soluções inovadoras e funcionais.
+        Cada card mostra o que foi construído, o stack usado e links diretos para
+        o projeto no ar e para o repositório no GitHub.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-10"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 my-10 w-full max-w-[1440px] mx-auto"
       >
-        {workData.map((project, index) => {
-          const card = (
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="h-72 bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
-              key={index}
+        {workData.map((project, index) => (
+          <motion.article
+            key={project.title + index}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05 * index, duration: 0.45 }}
+            whileHover={{ y: -4 }}
+            className="min-w-0 rounded-xl overflow-hidden border border-gray-200/80 dark:border-gray-700 bg-white dark:bg-gray-900/80 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col"
+          >
+            <div
+              className="h-40 sm:h-44 bg-no-repeat bg-cover bg-center relative shrink-0"
               style={{ backgroundImage: `url(${project.bgImage})` }}
             >
-              <div className="bg-white w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                <div className="max-w-[80%]">
-                  <h2 className=" font-semibold">{project.title}</h2>
-                  <p className="text-sm text-gray-600">{project.description}</p>
-                </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-blue-300 transition">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <span className="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-gray-100 shadow">
+                {project.category}
+              </span>
+            </div>
+
+            <div className="p-4 flex flex-col flex-1 gap-2.5 min-h-0">
+              <div>
+                <h3 className="text-base font-semibold text-gray-900 dark:text-white leading-snug line-clamp-2">
+                  {project.title}
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-medium uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-1.5">
+                  Stack
+                </p>
+                <ul className="flex flex-wrap gap-1">
+                  {project.stack.map((tech) => (
+                    <li key={tech}>
+                      <span className="inline-block text-[10px] px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200/80 dark:border-gray-600">
+                        {tech}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-2 mt-auto pt-1">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg py-2 px-3 text-xs font-medium bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:opacity-90 transition-opacity"
+                  aria-label={`Abrir demo: ${project.title}`}
+                >
                   <Image
                     src={assets.send_icon}
-                    alt="send icon"
-                    className="w-5"
+                    alt=""
+                    className="w-3.5 h-3.5 brightness-0 invert dark:invert-0 shrink-0"
                   />
-                </div>
+                  Ver projeto
+                </a>
+                {project.repo ? (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg py-2 px-3 text-xs font-medium border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    aria-label={`Abrir repositório: ${project.title}`}
+                  >
+                    <Image
+                      src={assets.github}
+                      alt=""
+                      className="w-4 h-4 shrink-0"
+                    />
+                    Repositório
+                  </a>
+                ) : null}
               </div>
-            </motion.div>
-          );
-
-          return project.link ? (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {card}
-            </a>
-          ) : (
-            <div key={index}>{card}</div>
-          );
-        })}
+            </div>
+          </motion.article>
+        ))}
       </motion.div>
 
       <motion.a
@@ -90,13 +131,15 @@ const Work = () => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
         href="https://github.com/YuriDeiverson"
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-gray-400 transition-colors duration-500"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-max flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 border-[0.5px] border-gray-700 dark:border-gray-500 rounded-full py-3 px-10 mx-auto my-20 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-500"
       >
-        Mostrar mais{""}
+        Ver mais no GitHub
         <Image
           src={assets.right_arrow_bold}
-          alt="Right arrow"
-          className="w-4"
+          alt=""
+          className="w-4 dark:invert"
         />
       </motion.a>
     </motion.div>
