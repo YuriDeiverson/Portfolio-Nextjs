@@ -151,7 +151,15 @@ export const toolsExtraLabels = [
   "Node.js",
   "TypeScript",
   "Next.js",
+  "React Native",
   "Tailwind CSS",
+  "Expo",
+  "SQL",
+  "PostgreSQL",
+  "MySQL",
+  "Firebase",
+  "AWS",
+  "Docker",
 ];
 
 export const infoList = [

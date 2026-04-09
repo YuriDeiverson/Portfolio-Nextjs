@@ -33,7 +33,7 @@ export default function Home() {
   }
 }, [isDarkMode]);
   return (
-    <main id="top" className="text-gray-800 dark:text-gray-100">
+    <main id="top" className="min-h-dvh text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-950">
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Header />
       <About />

@@ -30,14 +30,16 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-300 ${
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-300 text-gray-900 dark:text-gray-100 ${
           isScroll
-            ? "bg-white/70 dark:bg-gray-950/80 backdrop-blur-lg shadow-sm dark:shadow-gray-900/40"
+            ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-sm dark:shadow-gray-900/40"
             : ""
         }`}
       >
         <a href="#top">
-          <h1 className="w-28 cursor-pointer mr-14">Yuri.</h1>
+          <h1 className="w-28 cursor-pointer mr-14 font-semibold tracking-tight">
+            Yuri.
+          </h1>
         </a>
 
         <ul
@@ -93,11 +95,21 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             <Image src={assets.arrow_icon} alt="" className="w-3 dark:invert" aria-hidden />
           </a>
 
-          <button className="block md:hidden ml-3" onClick={openMenu}>
+          <button
+            type="button"
+            className="block md:hidden ml-3"
+            onClick={openMenu}
+            aria-label="Abrir menu"
+          >
             <Image
               src={assets.menu_black}
               alt=""
-              className="w-6 cursor-pointer"
+              className="w-6 cursor-pointer dark:hidden"
+            />
+            <Image
+              src={assets.menu_white}
+              alt=""
+              className="w-6 cursor-pointer hidden dark:block"
             />
           </button>
         </div>
@@ -105,38 +117,68 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         {/* Mobile menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 dark:bg-gray-900 transition duration-500"
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white text-gray-900 border-l border-gray-200 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-800 transition duration-500 shadow-xl dark:shadow-black/40"
         >
-          <div className="absolute right-6 top-6" onClick={closeMenu}>
+          <button
+            type="button"
+            className="absolute right-6 top-6 p-1 rounded-md hover:bg-gray-100 dark:hover:bg-white/10"
+            onClick={closeMenu}
+            aria-label="Fechar menu"
+          >
             <Image
               src={assets.close_black}
               alt=""
-              className="w-5 cursor-pointer"
+              className="w-5 cursor-pointer dark:hidden"
             />
-          </div>
+            <Image
+              src={assets.close_white}
+              alt=""
+              className="w-5 cursor-pointer hidden dark:block"
+            />
+          </button>
 
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#top">
+            <a
+              className="font-Ovo block py-1"
+              onClick={closeMenu}
+              href="#top"
+            >
               Home
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#about">
+            <a
+              className="font-Ovo block py-1"
+              onClick={closeMenu}
+              href="#about"
+            >
               Sobre
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#services">
+            <a
+              className="font-Ovo block py-1"
+              onClick={closeMenu}
+              href="#services"
+            >
               Serviços
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#work">
+            <a
+              className="font-Ovo block py-1"
+              onClick={closeMenu}
+              href="#work"
+            >
               Projetos
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#contact">
+            <a
+              className="font-Ovo block py-1"
+              onClick={closeMenu}
+              href="#contact"
+            >
               Contato
             </a>
           </li>

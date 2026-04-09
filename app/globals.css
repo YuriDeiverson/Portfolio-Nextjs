@@ -1,5 +1,8 @@
-
 @import "tailwindcss";
+
+/* Alinhar dark: à classe .dark (igual ao estado React). O padrão do v4 usa prefers-color-scheme,
+   o que gerava texto claro em fundo branco quando o SO estava em dark mas o layout não tinha bg escuro. */
+@custom-variant dark (&:where(.dark, .dark *));
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
