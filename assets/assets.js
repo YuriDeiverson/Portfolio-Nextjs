@@ -110,7 +110,7 @@ export const workData = [
   },
   {
     title: "Financeiro Controladoria",
-    description: "Organização de entradas, saídas e visão geral.",
+    description: "Uma aplicação completa de dashboard financeiro construída com React, TypeScript, projetada para ajudar usuários a acompanhar e gerenciar suas transações e metas financeiras.",
     category: "Frontend",
     bgImage: "/work-4.png",
     link: "https://dashboard-financeiro-rho.vercel.app/",
