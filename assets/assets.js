@@ -101,7 +101,7 @@ export const workData = [
     description: "Aplicativo mobile completo em React Native onde o mundo começa desconhecido e você vai revelando cada rua, bairro e ponto turístico que explorar na vida real. ",
     category: "Fullstack Mobile",
     bgImage: "/work-3.png",
-    link: "https://expo.dev/accounts/yuriid/projects/fogwars/builds/2f46d16b-673b-4e0c-8303-45f2054b0b2f",
+    link: "https://expo.dev/accounts/yuriid/projects/fogwars/builds/4a96e455-65bb-4b60-a5d4-beb0ec7d2d17",
     repo: "https://github.com/YuriDeiverson/FogWars",
     stack: ["React Native",
   "TypeScript",

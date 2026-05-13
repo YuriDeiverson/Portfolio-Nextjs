@@ -1,4 +1,4 @@
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
@@ -34,7 +34,7 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo text-gray-900 dark:text-white"
       >
-        Desenvolvedor Fullstack & UX
+        Desenvolvedor Fullstack
       </motion.h1>
 
       <motion.p
@@ -43,8 +43,7 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-Ovo text-gray-700 dark:text-gray-300"
       >
-        Desenvolvedor fullstack e designer de UX de Alagoas, Brasil. Experiência
-        em React, Next.js, Node.js, Tailwind CSS, JavaScript e TypeScript.
+        Desenvolvedor Fullstack especializado em aplicações web e mobile escaláveis, com foco em React, React Native, Next.js e TypeScript no front-end, e Node.js e Go no back-end. Experiência com Angular e Cloud (AWS/GCP).
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.a
