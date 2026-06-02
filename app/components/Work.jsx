@@ -5,9 +5,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import ProjectPreviewModal from "./Projectpreviewmodal";
+import { useLanguage } from "../context/LanguageContext";
 
 const Work = () => {
   const [previewProject, setPreviewProject] = useState(null);
+  const { t, isLoaded } = useLanguage();
+
+  if (!isLoaded) return null;
 
   return (
     <>
@@ -24,7 +28,7 @@ const Work = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-center mb-2 text-lg font-Ovo text-gray-700 dark:text-gray-300"
         >
-          Fullstack & web
+          {t("work.intro")}
         </motion.h4>
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
@@ -32,7 +36,7 @@ const Work = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-center text-4xl md:text-5xl font-Ovo text-gray-900 dark:text-white"
         >
-          Meus Projetos
+          {t("work.title")}
         </motion.h2>
 
         <motion.p
@@ -41,8 +45,7 @@ const Work = () => {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300"
         >
-          Cada card mostra o que foi construído, o stack usado e links diretos para
-          o projeto no ar e para o repositório no GitHub.
+          {t("work.description")}
         </motion.p>
 
         <motion.div
@@ -82,7 +85,7 @@ const Work = () => {
 
                 <div>
                   <p className="text-[10px] font-medium uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-1.5">
-                    Stack
+                    {t("work.stack")}
                   </p>
                   <ul className="flex flex-wrap gap-1">
                     {project.stack.map((tech) => (
@@ -130,7 +133,7 @@ const Work = () => {
                         alt=""
                         className="w-3.5 h-3.5 brightness-0 invert dark:invert-0 shrink-0"
                       />
-                      Ver projeto
+                      {t("work.viewProject")}
                     </button>
                   )}
 
@@ -147,7 +150,7 @@ const Work = () => {
                         alt=""
                         className="w-4 h-4 shrink-0"
                       />
-                      Repositório
+                      {t("work.repository")}
                     </a>
                   ) : null}
                 </div>
@@ -165,7 +168,7 @@ const Work = () => {
           rel="noopener noreferrer"
           className="w-max flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 border-[0.5px] border-gray-700 dark:border-gray-500 rounded-full py-3 px-10 mx-auto my-20 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-500"
         >
-          Ver mais no GitHub
+          {t("work.seeMore")}
           <Image
             src={assets.right_arrow_bold}
             alt=""

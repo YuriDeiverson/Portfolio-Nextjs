@@ -1,10 +1,14 @@
+"use client";
+
 import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
+  const { language, changeLanguage, t, isLoaded } = useLanguage();
 
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
@@ -23,6 +27,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  if (!isLoaded) return null;
 
   return (
     <>
@@ -51,31 +57,31 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         >
           <li>
             <a className="font-Ovo" href="#top">
-              Home
+              {t("navbar.home")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#about">
-              Sobre
+              {t("navbar.about")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#services">
-              Serviços
+              {t("navbar.services")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#work">
-              Projetos
+              {t("navbar.work")}
             </a>
           </li>
           <li>
             <a className="font-Ovo" href="#contact">
-              Contato
+              {t("navbar.contact")}
             </a>
           </li>
         </ul>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button onClick={() => setIsDarkMode((prev) => !prev)}>
             {/* Construindo o thema dark e claro */}
             {/* <Image
@@ -84,6 +90,31 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               className="w-6 cursor-pointer"
             /> */}
           </button>
+
+          {/* Botões de idioma */}
+          <div className="hidden lg:flex items-center gap-2 px-3 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50">
+            <button
+              onClick={() => changeLanguage("pt")}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
+                language === "pt"
+                  ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+                  : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              PT
+            </button>
+            <span className="text-gray-400 dark:text-gray-600">|</span>
+            <button
+              onClick={() => changeLanguage("en")}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
+                language === "en"
+                  ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+                  : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
           <a
             href="https://www.linkedin.com/in/yuri-deiverson/"
@@ -143,7 +174,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={closeMenu}
               href="#top"
             >
-              Home
+              {t("navbar.home")}
             </a>
           </li>
           <li>
@@ -152,7 +183,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={closeMenu}
               href="#about"
             >
-              Sobre
+              {t("navbar.about")}
             </a>
           </li>
           <li>
@@ -161,7 +192,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={closeMenu}
               href="#services"
             >
-              Serviços
+              {t("navbar.services")}
             </a>
           </li>
           <li>
@@ -170,7 +201,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={closeMenu}
               href="#work"
             >
-              Projetos
+              {t("navbar.work")}
             </a>
           </li>
           <li>
@@ -179,8 +210,43 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={closeMenu}
               href="#contact"
             >
-              Contato
+              {t("navbar.contact")}
             </a>
+          </li>
+
+          {/* Botões de idioma mobile */}
+          <li className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-3">
+              Idioma
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => {
+                  changeLanguage("pt");
+                  closeMenu();
+                }}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  language === "pt"
+                    ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                }`}
+              >
+                Português
+              </button>
+              <button
+                onClick={() => {
+                  changeLanguage("en");
+                  closeMenu();
+                }}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  language === "en"
+                    ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                }`}
+              >
+                English
+              </button>
+            </div>
           </li>
         </ul>
       </nav>

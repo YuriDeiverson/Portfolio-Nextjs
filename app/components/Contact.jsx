@@ -2,9 +2,13 @@ import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Contact = () => {
   const [result, setResult] = useState("");
+  const { t, isLoaded } = useLanguage();
+
+  if (!isLoaded) return null;
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +28,7 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Mensagem enviada!");
+      setResult(t("contact.successMsg"));
       event.target.reset();
     } else {
       console.log("Error", data);
@@ -46,7 +50,7 @@ const Contact = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo text-gray-700 dark:text-gray-300"
       >
-        Contato
+        {t("contact.intro")}
       </motion.h4>
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
@@ -54,7 +58,7 @@ const Contact = () => {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-center text-4xl md:text-5xl font-Ovo text-gray-900 dark:text-white"
       >
-        Entre em contato
+        {t("contact.title")}
       </motion.h2>
 
       <motion.p
@@ -63,8 +67,7 @@ const Contact = () => {
         transition={{ delay: 0.7, duration: 0.5 }}
         className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-700 dark:text-gray-300"
       >
-        Tem vaga, projeto ou quer só trocar ideia? Use o formulário abaixo —
-        respondo o quanto antes.
+        {t("contact.description")}
       </motion.p>
 
       <motion.form
@@ -80,7 +83,7 @@ const Contact = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
             type="text"
-            placeholder="Nome"
+            placeholder={t("contact.placeholders.name")}
             required
             className="flex-1 p-3 outline-none border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder:text-gray-500"
             name="name"
@@ -92,7 +95,7 @@ const Contact = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
             type="email"
-            placeholder="Email"
+            placeholder={t("contact.placeholders.email")}
             required
             className="flex-1 p-3 outline-none border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder:text-gray-500"
             name="email"
@@ -105,7 +108,7 @@ const Contact = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.3, duration: 0.6 }}
           rows="6"
-          placeholder="Coloque sua mensagem"
+          placeholder={t("contact.placeholders.message")}
           required
           className="w-full p-4 outline-none border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 mb-6"
           name="message"
@@ -118,7 +121,8 @@ const Contact = () => {
           className="py-3 px-8 w-max flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full mx-auto hover:opacity-90 duration-500 cursor-pointer"
         >
           {" "}
-          Enviar{" "}
+          {t("contact.submitBtn")}
+          {" "}
           <Image
             src={assets.right_arrow_white}
             alt=""

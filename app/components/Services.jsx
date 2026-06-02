@@ -1,9 +1,16 @@
+"use client";
+
 import { serviceData } from "../../assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Services = () => {
+  const { t, isLoaded } = useLanguage();
+
+  if (!isLoaded) return null;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +25,7 @@ const Services = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo text-gray-700 dark:text-gray-300"
       >
-        O que eu entrego
+        {t("services.intro")}
       </motion.h4>
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
@@ -26,7 +33,7 @@ const Services = () => {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-center text-4xl md:text-5xl font-Ovo text-gray-900 dark:text-white"
       >
-        Áreas de atuação
+        {t("services.title")}
       </motion.h2>
 
       <motion.p
@@ -45,20 +52,12 @@ const Services = () => {
         transition={{ delay: 0.9, duration: 0.6 }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-10"
       >
-        {serviceData.map(({ icon, title, description }) => (
+        {t("services.items").map(({ title, description }) => (
           <motion.div
             whileHover={{ scale: 1.02 }}
             key={title}
             className="border border-gray-300 dark:border-gray-600 rounded-lg px-8 py-10 bg-white/60 dark:bg-gray-900/40 hover:bg-gray-50 dark:hover:bg-gray-800/80 hover:shadow-md transition-all duration-500"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800/90">
-              <Image
-                src={icon}
-                alt=""
-                className="h-7 w-7 object-contain grayscale-[35%] dark:grayscale-[25%] dark:brightness-110 opacity-90"
-                aria-hidden
-              />
-            </div>
             <h3 className="text-lg my-4 text-gray-800 dark:text-gray-100 font-semibold">
               {title}
             </h3>

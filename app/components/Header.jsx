@@ -1,9 +1,16 @@
+"use client";
+
 import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Header = () => {
+  const { t, isLoaded } = useLanguage();
+
+  if (!isLoaded) return null;
+
   return (
     <header className="w-11/12 max-w-3xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-4 pt-24 pb-16">
       <motion.div
@@ -25,7 +32,7 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="flex items-end justify-center gap-2 text-xl md:text-2xl mb-3 font-Ovo text-gray-800 dark:text-gray-200"
       >
-        Olá! Eu sou Yuri Deiverson{" "}
+        {t("header.greeting")}{" "}
         <Image src={assets.hand_icon} alt="" className="w-6" aria-hidden />
       </motion.h3>
       <motion.h1
@@ -34,7 +41,7 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo text-gray-900 dark:text-white"
       >
-        Desenvolvedor Fullstack
+        {t("header.title")}
       </motion.h1>
 
       <motion.p
@@ -43,7 +50,7 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="max-w-2xl mx-auto font-Ovo text-gray-700 dark:text-gray-300"
       >
-        Desenvolvedor Fullstack especializado em aplicações web e mobile escaláveis, com foco em React, React Native, Next.js e TypeScript no front-end, e Node.js e Go no back-end. Experiência com Angular e Cloud (AWS/GCP).
+        {t("header.description")}
       </motion.p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <motion.a
@@ -53,7 +60,7 @@ const Header = () => {
           href="#contact"
           className="px-10 py-3 rounded-full bg-gray-900 text-white dark:bg-white dark:text-gray-900 flex items-center gap-2 border border-gray-900 dark:border-white hover:opacity-90 transition-opacity"
         >
-          Contato{" "}
+          {t("header.contactBtn")}{" "}
           <Image src={assets.right_arrow_white} alt="" className="w-4 dark:invert" aria-hidden />
         </motion.a>
 
@@ -65,7 +72,7 @@ const Header = () => {
           download
           className="px-10 py-3 border rounded-full border-gray-500 dark:border-gray-500 flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-500"
         >
-          Currículo{" "}
+          {t("header.curriculumBtn")}{" "}
           <Image src={assets.download_icon} alt="" className="w-4" aria-hidden />
         </motion.a>
       </div>

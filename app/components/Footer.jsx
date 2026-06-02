@@ -1,9 +1,15 @@
+"use client";
+
 import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
+  const { t, isLoaded } = useLanguage();
+
+  if (!isLoaded) return null;
   return (
     <motion.div 
        initial={{ opacity: 0 }}
@@ -33,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center sm:flex items-center justify-between border-t border-gray-300 dark:border-gray-700 mx-[10%] mt-12 py-6 text-gray-600 dark:text-gray-400">
-        <p>© {new Date().getFullYear()} Yuri Deiverson</p>
+        <p>{t("footer.text")}</p>
         <ul className="flex items-center gap-10 justify-center mt-4 sm:mt-0">
           <li>
             <a

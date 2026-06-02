@@ -78,12 +78,12 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Plataforma de Networking",
-    description: "Uma solução completa e moderna para otimizar a gestão de networking focados em geração de negócios por um sistema centralizado e eficiente.",
+    title: "Panificação C2",
+    description: "Um sistema completo de gestão de padaria, com checkout, carrinho de compras, controle de estoque e painel administrativo, desenvolvido com React, Next.js, Tailwind CSS e Node.js para uma experiência fluida e responsiva.",
     category: "Fullstack",
-    bgImage: "/work-1.png",
-    link: "https://gestaofrontendrh.vercel.app/",
-    repo: "https://github.com/YuriDeiverson/Gest-oRH",
+    bgImage: "/c2.png",
+    link: "https://c2-aditivos.vercel.app/",
+    repo: "https://github.com/YuriDeiverson/C2-Aditivos",
     stack: ["React", "Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
   },
   {
@@ -91,7 +91,7 @@ export const workData = [
     description:
       "Dashboard financeiro fullstack web e mobile em produção, com autenticação JWT, gráficos interativos e gerenciamento completo de transações.",
     category: "Fullstack",
-    bgImage: "/work-2.png",
+    bgImage: "/financeiro.png",
     link: "https://financeiroplus.vercel.app/",
     repo: "https://github.com/YuriDeiverson/Gestor360",
     stack: ["React", "React Native", "TypeScript", "Node.js", "Expo"],
@@ -109,12 +109,12 @@ export const workData = [
   "Expo"],
   },
   {
-    title: "Financeiro Controladoria",
-    description: "Uma aplicação completa de dashboard financeiro construída com React, TypeScript, projetada para ajudar usuários a acompanhar e gerenciar suas transações e metas financeiras.",
+    title: "Loja Ferr",
+    description: "E-commerce de joias e acessórios femininos, com catálogo dinâmico, carrinho de compras e integração com gateway de pagamento, criado pelo aplicativo tray e customizado com React, Tailwind CSS e Javascript.",
     category: "Frontend",
-    bgImage: "/work-4.png",
-    link: "https://dashboard-financeiro-rho.vercel.app/",
-    repo: "https://github.com/YuriDeiverson/Dashboard-Financeiro",
+    bgImage: "/ferr.png",
+    link: "https://www.shopferr.com/",
+    repo: "https://github.com/YuriDeiverson/Ecommecer-tray",
     stack: ["React", "TypeScript", "SQL", "Tailwind CSS"],
   },
 ];

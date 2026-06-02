@@ -1,5 +1,6 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import { ClientLayout } from "./ClientLayout";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -17,33 +18,33 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
-    default: "Yuri Deiverson | Desenvolvedor Fullstack & UX",
+    default: "Yuri Deiverson | Fullstack Developer & UX",
     template: "%s | Yuri Deiverson",
   },
   description:
-    "Portfólio de Yuri Deiverson — desenvolvedor fullstack (React, Next.js, Node.js) e UX, Alagoas, Brasil. Projetos, GitHub e contato.",
+    "Yuri Deiverson Portfolio — fullstack developer (React, Next.js, Node.js) and UX, Alagoas, Brazil. Projects, GitHub and contact.",
   keywords: [
-    "desenvolvedor fullstack",
+    "fullstack developer",
     "React",
     "Next.js",
     "Node.js",
     "TypeScript",
     "Alagoas",
-    "Brasil",
+    "Brazil",
   ],
   authors: [{ name: "Yuri Deiverson" }],
   openGraph: {
-    title: "Yuri Deiverson | Desenvolvedor Fullstack & UX",
+    title: "Yuri Deiverson | Fullstack Developer & UX",
     description:
-      "Fullstack e UX: React, Next.js, Node.js, TypeScript. Veja projetos e entre em contato.",
-    locale: "pt_BR",
+      "Fullstack and UX: React, Next.js, Node.js, TypeScript. See projects and get in touch.",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yuri Deiverson | Desenvolvedor Fullstack & UX",
+    title: "Yuri Deiverson | Fullstack Developer & UX",
     description:
-      "Fullstack e UX: React, Next.js, Node.js. Projetos e contato.",
+      "Fullstack and UX: React, Next.js, Node.js. Projects and contact.",
   },
   robots: { index: true, follow: true },
 };
@@ -52,14 +53,14 @@ const themeScript = `(function(){try{var t=localStorage.theme;if(t==="dark"||(!(
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
         className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100`}
       >
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
