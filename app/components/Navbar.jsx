@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-const Navbar = ({ isDarkMode, setIsDarkMode }) => {
+const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
   const { language, changeLanguage, t, isLoaded } = useLanguage();
@@ -82,15 +82,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </li>
         </ul>
         <div className="flex items-center gap-3">
-          <button onClick={() => setIsDarkMode((prev) => !prev)}>
-            {/* Construindo o thema dark e claro */}
-            {/* <Image
-              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
-              alt=""
-              className="w-6 cursor-pointer"
-            /> */}
-          </button>
-
           {/* Botões de idioma */}
           <div className="hidden lg:flex items-center gap-2 px-3 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50">
             <button

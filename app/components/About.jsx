@@ -1,6 +1,6 @@
 "use client";
 
-import { assets, infoList } from "../../assets/assets";
+import { assets } from "../../assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
@@ -14,6 +14,21 @@ const About = () => {
 
   // Get localized stack data
   const stackData = t("about.stackData");
+  const description = t("about.description");
+
+  const renderHighlightedText = (text) =>
+    text.split("**").map((segment, index) =>
+      index % 2 === 1 ? (
+        <strong
+          className="font-semibold text-gray-900 dark:text-white"
+          key={`${segment}-${index}`}
+        >
+          {segment}
+        </strong>
+      ) : (
+        segment
+      ),
+    );
 
   return (
     <motion.div
@@ -41,132 +56,133 @@ const About = () => {
       </motion.h2>
       <motion.div
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col lg:flex-row items-center gap-16 mt-16"
+        className="mt-12 grid items-start gap-10 lg:grid-cols-12 xl:gap-16"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="w-64 sm:w-80 flex-shrink-0"
+          className="relative mx-auto w-full max-w-md lg:col-span-5 lg:mx-0"
         >
           <Image
             src={assets.user_image}
             alt="Yuri Deiverson em ambiente de trabalho"
-            className="w-full rounded-3xl"
+            className="aspect-[5/6] w-full rounded-3xl object-cover object-top shadow-sm"
           />
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex-1 text-justify"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="min-w-0 lg:col-span-7"
         >
-          <p className="mb-10 font-Ovo text-base md:text-lg leading-relaxed max-w-3xl text-gray-800 dark:text-gray-200">
-            {t("about.description")}
-          </p>
-
-          <motion.ul
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl"
-          >
-            {t("about.infoList").map(({ title, description }) => (
-              <motion.li
-                whileInView={{ scale: 1.05 }}
-                className="border border-gray-300 dark:border-gray-600 rounded-xl p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800/80 hover:-translate-y-1 duration-500 hover:shadow-md dark:hover:shadow-gray-900/30"
-                key={title}
+          <div className="space-y-5 font-Ovo text-base leading-8 text-gray-700 md:text-lg">
+            {description.map((paragraph, index) => (
+              <p
+                className={index === 0 ? "text-xl leading-9 text-gray-900" : ""}
+                key={paragraph}
               >
-                <Image
-                  src={assets.edu_icon}
-                  alt=""
-                  className="w-7 mt-3 dark:hidden"
-                  aria-hidden
-                />
-                <Image
-                  src={assets.edu_icon_dark}
-                  alt=""
-                  className="w-7 mt-3 hidden dark:block"
-                  aria-hidden
-                />
-                <h3 className="my-4 font-semibold text-gray-800 dark:text-gray-200">
-                  {title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {description}
-                </p>
-              </motion.li>
+                {renderHighlightedText(paragraph)}
+              </p>
             ))}
-          </motion.ul>
-
-          <motion.div
-  initial={{ y: 12, opacity: 0 }}
-  whileInView={{ y: 0, opacity: 1 }}
-  transition={{ delay: 1.25, duration: 0.5 }}
-  className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700"
->
-  <h3 className="text-base font-semibold text-gray-800 dark:text-gray-200 font-Ovo mb-1">
-    {t("about.stack")}
-  </h3>
-  <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 max-w-xl">
-    {t("about.stackDesc")}
-  </p>
-
-  {/* Tabs */}
-  <div className="flex gap-2 mb-5">
-    {["frontend", "backend"].map((tab) => (
-      <button
-        key={tab}
-        onClick={() => setActiveTab(tab)}
-        className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 cursor-pointer
-          ${activeTab === tab
-            ? "border-gray-400 dark:border-gray-500 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
-            : "border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/60"
-          }`}
-      >
-        {tab === "frontend" ? (
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" />
-          </svg>
-        ) : (
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-            <rect x="2" y="6" width="20" height="4" rx="1" /><rect x="2" y="14" width="20" height="4" rx="1" />
-            <circle cx="6" cy="8" r="1" fill="currentColor" /><circle cx="6" cy="16" r="1" fill="currentColor" />
-          </svg>
-        )}
-        {tab === "frontend" ? t("about.frontend") : t("about.backend")}
-      </button>
-    ))}
-  </div>
-
-  {/* Cards grid */}
-  <motion.ul
-    key={activeTab}
-    initial={{ opacity: 0, y: 6 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3 }}
-    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-3xl"
-  >
-    {stackData[activeTab].map(({ icon, title, description }) => (
-      <li
-        key={title}
-        className="flex gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-700
-          hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800/60
-          transition-all duration-200 cursor-default"
-      >
-        <span className="text-xl mt-0.5 flex-shrink-0">{icon}</span>
-        <div>
-          <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-0.5">{title}</p>
-          <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{description}</p>
-        </div>
-      </li>
-    ))}
-  </motion.ul>
-</motion.div>
+          </div>
         </motion.div>
       </motion.div>
+
+      <motion.section
+        initial={{ y: 12, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        className="mt-14 border-t border-gray-200 pt-10"
+      >
+        <div className="mb-6 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <h3 className="mb-1 font-Ovo text-xl font-semibold text-gray-800">
+              {t("about.stack")}
+            </h3>
+            <p className="max-w-xl text-sm text-gray-600">
+              {t("about.stackDesc")}
+            </p>
+          </div>
+
+          <div
+            aria-label={t("about.stack")}
+            className="flex gap-2"
+            role="group"
+          >
+            {["frontend", "backend"].map((tab) => (
+              <button
+                aria-pressed={activeTab === tab}
+                className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                  activeTab === tab
+                    ? "border-gray-400 bg-gray-100 text-gray-900"
+                    : "border-gray-200 text-gray-500 hover:bg-gray-50"
+                }`}
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                type="button"
+              >
+                {tab === "frontend" ? (
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.8}
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
+                  </svg>
+                ) : (
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.8}
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="2" y="6" width="20" height="4" rx="1" />
+                    <rect x="2" y="14" width="20" height="4" rx="1" />
+                    <circle cx="6" cy="8" r="1" fill="currentColor" />
+                    <circle cx="6" cy="16" r="1" fill="currentColor" />
+                  </svg>
+                )}
+                {tab === "frontend"
+                  ? t("about.frontend")
+                  : t("about.backend")}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <motion.ul
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4"
+          initial={{ opacity: 0, y: 6 }}
+          key={activeTab}
+          transition={{ duration: 0.3 }}
+        >
+          {stackData[activeTab].map(({ icon, title, description }) => (
+            <li
+              className="flex gap-3 rounded-xl border border-gray-200 p-4 transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
+              key={title}
+            >
+              <span className="mt-0.5 flex-shrink-0 text-xl">{icon}</span>
+              <div>
+                <p className="mb-0.5 text-sm font-semibold text-gray-800">
+                  {title}
+                </p>
+                <p className="text-xs leading-relaxed text-gray-500">
+                  {description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </motion.ul>
+      </motion.section>
     </motion.div>
   );
 };

@@ -18,47 +18,47 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
-    default: "Yuri Deiverson | Fullstack Developer & UX",
+    default: "Yuri Deiverson | Software Engineer",
     template: "%s | Yuri Deiverson",
   },
   description:
-    "Yuri Deiverson Portfolio — fullstack developer (React, Next.js, Node.js) and UX, Alagoas, Brazil. Projects, GitHub and contact.",
+    "Software Engineer experienced in Java, Spring Boot, Python, Node.js, React, React Native, TypeScript, PostgreSQL, system integrations and cloud.",
   keywords: [
-    "fullstack developer",
+    "software engineer",
+    "Java",
+    "Spring Boot",
+    "Python",
     "React",
+    "React Native",
     "Next.js",
     "Node.js",
     "TypeScript",
+    "PostgreSQL",
     "Alagoas",
     "Brazil",
   ],
   authors: [{ name: "Yuri Deiverson" }],
   openGraph: {
-    title: "Yuri Deiverson | Fullstack Developer & UX",
+    title: "Yuri Deiverson | Software Engineer",
     description:
-      "Fullstack and UX: React, Next.js, Node.js, TypeScript. See projects and get in touch.",
+      "End-to-end software engineering across frontend, backend, databases, integrations and cloud.",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yuri Deiverson | Fullstack Developer & UX",
+    title: "Yuri Deiverson | Software Engineer",
     description:
-      "Fullstack and UX: React, Next.js, Node.js. Projects and contact.",
+      "Software Engineer building complete applications with Java, Python, Node.js, React and PostgreSQL.",
   },
   robots: { index: true, follow: true },
 };
 
-const themeScript = `(function(){try{var t=localStorage.theme;if(t==="dark"||(!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){}})();`;
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100`}
+        className={`${outfit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden bg-white text-gray-900`}
       >
         <ClientLayout>{children}</ClientLayout>
       </body>

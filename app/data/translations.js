@@ -10,31 +10,21 @@ export const translations = {
     },
     header: {
       greeting: "Olá! Eu sou Yuri Deiverson",
-      title: "Desenvolvedor Fullstack",
+      title: "Engenheiro de Software",
       description:
-        "Desenvolvedor Fullstack especializado em aplicações web e mobile escaláveis, com foco em React, React Native, Next.js e TypeScript no front-end, e Node.js e Go no back-end. Experiência com Angular e Cloud (AWS/GCP).",
+        "Engenheiro de software com experiência no desenvolvimento ponta a ponta de aplicações web e mobile, APIs, bancos de dados e integrações entre sistemas.",
       contactBtn: "Contato",
       curriculumBtn: "Currículo",
     },
     about: {
       intro: "Introdução",
       title: "Sobre mim",
-      description:
-        "Sou desenvolvedor fullstack com ênfase em front-end, especializado em React, React Native, TypeScript, Django, Next.js, SQL e Tailwind CSS para criar interfaces modernas, responsivas e centradas na melhor experiência do usuário. No backend, trabalho com Python, JavaScript e PHP, desenvolvendo soluções robustas e escaláveis. Tenho facilidade para compreender problemas complexos, transformar ideias em soluções funcionais e manter um padrão de código limpo e organizado. Valorizo a clareza na comunicação, a colaboração em equipe e a adoção de boas práticas que tornam o desenvolvimento mais eficiente e sustentável. Atualmente, estou expandindo meus conhecimentos em Node.js, focando na criação de APIs e integração de sistemas. Se você busca um profissional comprometido, proativo e com vontade de crescer, vamos conversar!",
-      infoList: [
-        {
-          title: "Formação",
-          description: "ADS — Estácio",
-        },
-        {
-          title: "Projetos",
-          description: "30+ projetos concluídos",
-        },
-        {
-          title: "Perfil técnico",
-          description:
-            "Fullstack com ênfase em front-end: produtos web, integração com APIs e entrega ponta a ponta.",
-        },
+      description: [
+        "Sou **Software Engineer** com experiência no desenvolvimento de aplicações completas, atuando desde a concepção da solução até a implementação de interfaces, APIs, bancos de dados e integrações entre sistemas.",
+        "Trabalho principalmente com **Java (Spring Boot), Python, Node.js, React, React Native, TypeScript e PostgreSQL**, desenvolvendo aplicações escaláveis, APIs REST, soluções baseadas em inteligência artificial e sistemas voltados para automação e produtividade.",
+        "Tenho experiência na construção de aplicações full stack, aplicando boas práticas de arquitetura, código limpo, versionamento com Git, Docker e metodologias ágeis. Busco desenvolver software de forma sustentável, priorizando desempenho, manutenibilidade e uma boa experiência para o usuário.",
+        "Atualmente, venho aprofundando meus conhecimentos em **Java, Spring Boot, arquitetura de software, microsserviços e computação em nuvem**, sempre buscando evoluir tecnicamente e acompanhar as melhores práticas da engenharia de software.",
+        "Acredito que tecnologia vai além de escrever código: envolve compreender problemas, propor soluções eficientes e construir produtos que gerem valor para as pessoas e para o negócio.",
       ],
       stack: "Stack e ferramentas",
       stackDesc:
@@ -82,6 +72,12 @@ export const translations = {
         ],
         backend: [
           {
+            icon: "☕",
+            title: "Java & Spring Boot",
+            description:
+              "APIs REST, microsserviços e aplicações backend com arquitetura limpa e escalável.",
+          },
+          {
             icon: "🟢",
             title: "Node.js & TypeScript",
             description:
@@ -91,7 +87,7 @@ export const translations = {
             icon: "🐍",
             title: "Python (AI, RAG & LLMs)",
             description:
-              "Vetorização fiscal, agentes inteligentes e consumo de LLMs via APIs RAG.",
+              "Agentes inteligentes, pipelines RAG e integração com LLMs para automação e produtividade.",
           },
           {
             icon: "🗄️",
@@ -105,12 +101,7 @@ export const translations = {
             description:
               "APIPASS, Digibee e barramentos acoplados a ERPs (SAP, Totvs).",
           },
-          {
-            icon: "🐘",
-            title: "PHP & Laravel",
-            description:
-              "Engines de cálculo e motores fiscais resilientes em produção.",
-          },
+
           {
             icon: "🐳",
             title: "DevOps & Cloud",
@@ -173,7 +164,7 @@ export const translations = {
           title: "FogWars",
           description:
             "Aplicativo mobile completo em React Native onde o mundo começa desconhecido e você vai revelando cada rua, bairro e ponto turístico que explorar na vida real.",
-          category: "Fullstack Mobile",
+          category: "Mobile",
         },
         {
           title: "Loja Ferr",
@@ -211,31 +202,21 @@ export const translations = {
     },
     header: {
       greeting: "Hi! I'm Yuri Deiverson",
-      title: "Fullstack Developer",
+      title: "Software Engineer",
       description:
-        "Fullstack developer specializing in scalable web and mobile applications, with focus on React, React Native, Next.js and TypeScript on the front-end, and Node.js and Go on the back-end. Experience with Angular and Cloud (AWS/GCP).",
+        "Software engineer experienced in the end-to-end development of web and mobile applications, APIs, databases, and system integrations.",
       contactBtn: "Contact",
       curriculumBtn: "Resume",
     },
     about: {
       intro: "Introduction",
       title: "About me",
-      description:
-        "I'm a fullstack developer with emphasis on front-end, specialized in React, React Native, TypeScript, Django, Next.js, SQL and Tailwind CSS to create modern, responsive interfaces centered on the best user experience. On the backend, I work with Python, JavaScript and PHP, developing robust and scalable solutions. I have the ability to understand complex problems, transform ideas into functional solutions and maintain a clean and organized code standard. I value clear communication, team collaboration and the adoption of best practices that make development more efficient and sustainable. Currently, I'm expanding my knowledge in Node.js, focusing on creating APIs and system integration. If you're looking for a committed, proactive professional willing to grow, let's talk!",
-      infoList: [
-        {
-          title: "Education",
-          description: "ADS — Estácio",
-        },
-        {
-          title: "Projects",
-          description: "30+ projects completed",
-        },
-        {
-          title: "Technical Profile",
-          description:
-            "Fullstack with emphasis on front-end: web products, API integration and end-to-end delivery.",
-        },
+      description: [
+        "I'm a **Software Engineer** with experience building complete applications, working from solution design through the implementation of user interfaces, APIs, databases, and system integrations.",
+        "My main stack includes **Java (Spring Boot), Python, Node.js, React, React Native, TypeScript, and PostgreSQL**. I build scalable applications, REST APIs, AI-powered solutions, and systems focused on automation and productivity.",
+        "I have experience building full-stack applications and applying sound architectural practices, clean code, Git-based version control, Docker, and agile methodologies. I aim to build software sustainably, prioritizing performance, maintainability, and a strong user experience.",
+        "I am currently deepening my knowledge of **Java, Spring Boot, software architecture, microservices, and cloud computing**, while continuously improving my technical skills and keeping up with software engineering best practices.",
+        "I believe technology goes beyond writing code: it is about understanding problems, proposing efficient solutions, and building products that create value for people and businesses.",
       ],
       stack: "Stack and tools",
       stackDesc:
@@ -283,6 +264,12 @@ export const translations = {
         ],
         backend: [
           {
+            icon: "☕",
+            title: "Java & Spring Boot",
+            description:
+              "REST APIs, microservices and backend applications with clean, scalable architecture.",
+          },
+          {
             icon: "🟢",
             title: "Node.js & TypeScript",
             description:
@@ -292,7 +279,7 @@ export const translations = {
             icon: "🐍",
             title: "Python (AI, RAG & LLMs)",
             description:
-              "Fiscal vectorization, intelligent agents and LLM consumption via RAG APIs.",
+              "Intelligent agents, RAG pipelines and LLM integrations for automation and productivity.",
           },
           {
             icon: "🗄️",
@@ -310,7 +297,7 @@ export const translations = {
             icon: "🐘",
             title: "PHP & Laravel",
             description:
-              "Calculation engines and resilient fiscal engines in production.",
+              "Applications, APIs and resilient backend services in production environments.",
           },
           {
             icon: "🐳",
@@ -374,7 +361,7 @@ export const translations = {
           title: "FogWars",
           description:
             "Complete mobile application in React Native where the world starts unknown and you reveal each street, neighborhood and tourist spot you explore in real life.",
-          category: "Fullstack Mobile",
+          category: "Mobile",
         },
         {
           title: "Loja Ferr",

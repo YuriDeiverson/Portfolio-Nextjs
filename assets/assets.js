@@ -99,7 +99,7 @@ export const workData = [
   {
     title: "FogWars",
     description: "Aplicativo mobile completo em React Native onde o mundo começa desconhecido e você vai revelando cada rua, bairro e ponto turístico que explorar na vida real. ",
-    category: "Fullstack Mobile",
+    category: "Mobile",
     bgImage: "/work-3.png",
     link: "https://expo.dev/accounts/yuriid/projects/fogwars/builds/4a96e455-65bb-4b60-a5d4-beb0ec7d2d17",
     repo: "https://github.com/YuriDeiverson/FogWars",
@@ -160,28 +160,6 @@ export const toolsExtraLabels = [
   "Firebase",
   "AWS",
   "Docker",
-];
-
-export const infoList = [
-  {
-    icon: assets.edu_icon,
-    iconDark: assets.edu_icon_dark,
-    title: "Formação",
-    description: "ADS — Estácio",
-  },
-  {
-    icon: assets.project_icon,
-    iconDark: assets.project_icon_dark,
-    title: "Projetos",
-    description: "30+ projetos concluídos",
-  },
-  {
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    title: "Perfil técnico",
-    description:
-      "Fullstack com ênfase em front-end: produtos web, integração com APIs e entrega ponta a ponta.",
-  },
 ];
 
 export const toolsData = [
