@@ -7,7 +7,12 @@ import { motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
 const Header = () => {
-  const { t, isLoaded } = useLanguage();
+  const { language, t, isLoaded } = useLanguage();
+
+  const curriculumFile =
+    language === "en"
+      ? "/Resume_YuriDeiverson.pdf"
+      : "/Curriculo_YuriDeiverson.pdf";
 
   if (!isLoaded) return null;
 
@@ -68,7 +73,7 @@ const Header = () => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          href="/Curriculo_YuriDeiverson.pdf"
+          href={curriculumFile}
           download
           className="px-10 py-3 border rounded-full border-gray-500 dark:border-gray-500 flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-500"
         >

@@ -77,15 +77,16 @@ export const assets = {
 };
 
 export const workData = [
-  {
-    title: "Panificação C2",
-    description: "Um sistema completo de gestão de padaria, com checkout, carrinho de compras, controle de estoque e painel administrativo, desenvolvido com React, Next.js, Tailwind CSS e Node.js para uma experiência fluida e responsiva.",
-    category: "Fullstack",
-    bgImage: "/c2.png",
-    link: "https://c2-aditivos.vercel.app/",
-    repo: "https://github.com/YuriDeiverson/C2-Aditivos",
-    stack: ["React", "Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
-  },
+{
+  title: "GabaritandoAi",
+  description:
+    "Uma plataforma completa de estudos para concursos públicos, com mais de mil questões, cronograma de estudos e rotina personalizada. Desenvolvida com Java e Spring Boot no back-end, PostgreSQL como banco de dados e React com Tailwind CSS no front-end, proporcionando uma experiência moderna, responsiva e intuitiva.",
+  category: "Fullstack",
+  bgImage: "/gabaritaai.png",
+  link: "https://gabaritandoai.vercel.app/",
+  repo: "https://github.com/YuriDeiverson/java-spring-gabarita-app",
+  stack: ["React", "Tailwind CSS", "Java", "Spring Boot", "PostgreSQL"],
+},
   {
     title: "Dashboard Financeiro",
     description:
@@ -109,7 +110,7 @@ export const workData = [
   "Expo"],
   },
   {
-    title: "Loja Ferr",
+    title: "Loja e-commerce",
     description: "E-commerce de joias e acessórios femininos, com catálogo dinâmico, carrinho de compras e integração com gateway de pagamento, criado pelo aplicativo tray e customizado com React, Tailwind CSS e Javascript.",
     category: "Frontend",
     bgImage: "/ferr.png",
